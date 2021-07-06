@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Imam Agustian Nugraha</h1>
-<h3 align="center">A passionate Website developer from Indonesia</h3>
+<h3 align="center">A passionate Website Developer from Indonesia</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=imaman15&label=Profile%20views&color=0e75b6&style=flat" alt="imaman15" /> </p>
 
@@ -24,6 +24,7 @@
 <h3 align="left">Support:</h3>
 <p><a href="https://www.buymeacoffee.com/https://www.buymeacoffee.com/imaman15"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="https://www.buymeacoffee.com/imaman15" /></a></p><br><br>
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=imaman15&show_icons=true&locale=en&layout=compact" alt="imaman15" /></p>
-
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=imaman15&show_icons=true&locale=en" alt="imaman15" /></p>
+<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=imaman15&show_icons=true&locale=en&layout=compact" alt="imaman15" /></p>
+<br>
+<!-- &nbsp; -->
+<p><img align="center" src="https://github-readme-stats.vercel.app/api?username=imaman15&show_icons=true&locale=en" alt="imaman15" /></p>
