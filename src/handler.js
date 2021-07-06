@@ -48,7 +48,7 @@ const addBookHandler = (req, h) => {
 
   books.push(newBook);
 
-  const isSuccess = books.filter((book) => book.id === id).length > 0;
+  const isSuccess = books.filter((d) => d.id === id).length > 0;
 
   if (isSuccess) {
     const response = h.response({
@@ -71,27 +71,43 @@ const addBookHandler = (req, h) => {
 };
 
 const getAllBooksHandler = (req, h) => {
-  const data = books.map((d) => {
-    const { id, name, publisher } = d;
-    return ({
-      id, name, publisher,
-    });
-  });
+  const { name: nameFilter, reading, finished } = req.query;
+
+  let dataFilter = books;
+
+  if (nameFilter) {
+    dataFilter = dataFilter.filter((d) => d
+      .name.toLowerCase().includes(nameFilter.toLowerCase()));
+  }
+
+  if (reading) {
+    dataFilter = dataFilter.filter((d) => d.reading === Boolean(Number(reading)));
+  }
+
+  if (finished) {
+    dataFilter = dataFilter.filter((d) => d.finished === Boolean(Number(finished)));
+  }
 
   const response = h.response({
     status: 'success',
     data: {
-      books: data,
+      books: dataFilter.map((d) => {
+        const { id, name, publisher } = d;
+        return ({
+          id, name, publisher,
+        });
+      }),
     },
   });
   response.code(200);
+
   return response;
 };
 
 const getBookByIdHandler = (req, h) => {
   const { bookId } = req.params;
 
-  const book = books.filter((b) => b.id === bookId)[0];
+  const book = books.filter((d) => d.id === bookId)[0];
 
   if (book !== undefined) {
     return {
@@ -137,7 +153,7 @@ const editBookByIdHandler = (req, h) => {
     return response;
   }
 
-  const index = books.findIndex((book) => book.id === bookId);
+  const index = books.findIndex((d) => d.id === bookId);
 
   if (index !== -1) {
     books[index] = {
